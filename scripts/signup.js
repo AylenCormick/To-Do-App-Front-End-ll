@@ -9,42 +9,6 @@ const formulario = document.forms[0];
 const inputs = document.querySelectorAll("#formulario input")
 const url = "https://todo-api.ctd.academy/v1";
 
-// const expresiones = {
-// 	nombre: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras y espacios, pueden llevar acentos.
-// 	password: /^.{4,12}$/, // 4 a 12 digitos.
-// 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-// 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
-// }
-
-/* -------------------------------------------------------------------------- */
-/*            FUNCIÓN 1: Escuchamos el submit y preparamos el envío           */
-/* -------------------------------------------------------------------------- */
-
-// inputs.forEach(input => {
-//     input.addEventListener("blur", (e) => {
-//         switch (e.target.name) {
-//             case "nombre":
-//                 if(!expresiones.nombre.test(e.target.value)) {
-//                     formulario.innerHTML += "<div><p>err</p></div>"
-//                 } else {
-//                     formulario.innerHTML += "<div><p>ok</p></div>"
-//                 }
-//             case "apellido":
-
-//             case "email":
-
-//             case "password":
-
-//             case "password-rtp":
-            
-//             break;
-        
-//             default:
-//                 break;
-//         }
-//     })
-// })
-
 
 formulario.addEventListener('submit', function (event) {
 

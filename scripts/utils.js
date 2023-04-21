@@ -56,16 +56,14 @@ function compararContrasenias(contrasenia_1, contrasenia_2) {
 
 }
 
-// formulario.innerHTML += "<div class='valErr'></div>"
-// const divErr = document.querySelector(".valErr");
 
 function renderizarErrores(nombre, apellido, email, contrasenia, contraseniados) {
 
     errores = [];
-    const de = document.querySelector(".divError");
+    const dver = document.querySelector(".divError");
     
-    if (de != null) {
-        formulario.removeChild(de.firstElementChild);
+    if (dver) {
+        formulario.removeChild(dver);
     }
     
     validarTexto(nombre);
@@ -78,17 +76,10 @@ function renderizarErrores(nombre, apellido, email, contrasenia, contraseniados)
     divErr.classList.add("divError");
     
         errores.forEach(err => {
-            divErr.innerHTML += `<p class="pErr"> ${err} </p>`
+            divErr.innerHTML += `<p class="pErr" style="color:red; margin:5px;"> ${err} </p>`
         })
     
     formulario.appendChild(divErr);
-
-        // divErr.style.margin = "10px"
-    // const pError = document.querySelectorAll(".pErr");
-    // pError.forEach(p => {
-    //     p.style.color = "red";
-    //     p.style.margin = "5px";
-    // });
 
     console.log(errores);
 

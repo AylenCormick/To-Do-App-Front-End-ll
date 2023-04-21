@@ -242,11 +242,6 @@ window.addEventListener('load', function () {
       })
     })
 
-    // main.addEventListener("click", function (e) {
-      
-
-
-    // })
 
 }
 
@@ -255,34 +250,39 @@ window.addEventListener('load', function () {
   /*                     FUNCIÓN 7 - Eliminar tarea [DELETE]                    */
   /* -------------------------------------------------------------------------- */
   function botonBorrarTarea() {
-    
-    main.addEventListener("click", function (e) {
-      
-      if (e.target.classList.contains("borrar")) {
-        
-      const idTarea = e.target.id;
-      const url = `${urlTareas}/${idTarea}`
 
-        const settings = {
-          method: "DELETE",
-          headers: {
-            "Authorization": token
+    const btns = document.querySelectorAll(".borrar");
+
+    btns.forEach(btn => {
+
+      btn.addEventListener("click", function (e) {
+  
+        e.preventDefault();
+          
+        const idTarea = e.target.id;
+        const url = `${urlTareas}/${idTarea}`
+  
+          const settings = {
+            method: "DELETE",
+            headers: {
+              "Authorization": token
+            }
           }
-        }
-        
-        fetch(url, settings)
-        .then(response => {
-          console.log("Borrando tarea...");
-          console.log(response.status);
-          consultarTareas();
-        })
-        .catch(error => {
-          console.log(error);
-        })
-
-      }
+          
+          fetch(url, settings)
+          .then(response => {
+            console.log("Borrando tarea...");
+            console.log(response.status);
+            consultarTareas();
+          })
+          .catch(error => {
+            console.log(error);
+          })
+  
+      })
 
     })
+    
 
   };
 
